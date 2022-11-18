@@ -147,7 +147,7 @@ contract Rentropy721 is Initializable, UUPSUpgradeable, OwnableUpgradeable {
             rent_block : 0
         });
 
-        emit NFTlisted(msg.sender, collection_address, token_id, _collateral_token, _collateral_amount, _maxrent_duration, _rent_fee_per_block);
+        emit NFTlisted(msg.sender, collection_address, token_id, _collateral_token, _collateral_amount, _maxrent_duration, _rent_fee_per_block, block.number, _expire_duration);
     }
 
     enum PARAMETER { COLLAT, MAXRENT, PRICE, BLOCKFEE, EXPIREDURATION }
@@ -257,7 +257,7 @@ contract Rentropy721 is Initializable, UUPSUpgradeable, OwnableUpgradeable {
     }
 
 
-    event NFTlisted(address from_address, address collection_address, uint256 token_id, address collateral_token, uint256 collateral_amount, uint256 max_rent_duration, uint256 rent_fee_per_block);
+    event NFTlisted(address from_address, address collection_address, uint256 token_id, address collateral_token, uint256 collateral_amount, uint256 max_rent_duration, uint256 rent_fee_per_block, uint256 list_block, uint256 expire_duration);
     event NFTlistcancel(address from_address, address collection_address, uint256 token_id);
     event NFTlistmodified(address from_address, address collection_address, uint256 token_id, PARAMETER parameter, uint256 input);
     event NFTrented(address from_address, address collection_address, uint256 token_id, uint256 rent_block, uint256 rent_duration, uint256 collateral_amount, uint256 rent_fee);

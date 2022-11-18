@@ -34,8 +34,7 @@ module.exports = {
     cypress: {
       url: "https://public-node-api.klaytnapi.com/v1/cypress",
       chainId: 8217,
-      gas: 20000000,
-      gasPrice: 250000000000,
+      gasPrice: 750000000000,
       accounts: [process.env.PRIVATE_KEY1, process.env.PRIVATE_KEY2, process.env.PRIVATE_KEY3],
       live: true,
       saveDeployments: true,
@@ -45,7 +44,7 @@ module.exports = {
       url: "https://kaikas.baobab.klaytn.net:8651",
       chainId: 1001,
       accounts: [process.env.PRIVATE_KEY1, process.env.PRIVATE_KEY2, process.env.PRIVATE_KEY3, process.env.PRIVATE_KEY4],
-      gas: 20000000,
+      gas: 8500000,
       gasPrice: 250000000000,
       live: true,
       saveDeployments: true,
