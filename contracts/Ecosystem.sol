@@ -40,6 +40,15 @@ contract Ecosystem is Initializable, UUPSUpgradeable, OwnableUpgradeable {
        __Ownable_init();
     }
 
+    function setRentContract(address _rent) public onlyOwner {
+        rentContract = _rent;
+    }
+
+    function feeCollector(address _fee) public onlyOwner {
+        feeCollector = _fee;
+    }
+
+
     function _authorizeUpgrade(address) internal override onlyOwner {}
 
     function rewardPerContribution(uint256 _epoch, address _token) public view returns(uint256) {
@@ -113,6 +122,5 @@ contract Ecosystem is Initializable, UUPSUpgradeable, OwnableUpgradeable {
             for (uint256 i = 0; i < userRewards.length; i++) {
             IERC20(userRewards[i].token).transfer(_user, userRewards[i].amount);
         }
-
     }
 }
