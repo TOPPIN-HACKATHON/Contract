@@ -15,6 +15,16 @@ describe("Rent", function () {
     await rent.deployed();
     await rent.setFeecollector(owner.address);
 
+    const Ecosystem = await ethers.getContractFactory("EcosystemDistributor");
+    let ecosystem = await upgrades.deployProxy(Ecosystem, {
+      initializer: "initialize",
+    });
+    await ecosystem.deployed();
+    await ecosystem.setFeeCollector(owner.address);
+    await ecosystem.setRentContract(rent.address);
+    await rent.setEcosystem(ecosystem.address);
+    await rent.setEcoRward(1, 5, 3);
+
     const NFT = await ethers.getContractFactory("MyToken721");
     const nft = await NFT.connect(lender).deploy();
     await nft.deployed();
@@ -22,6 +32,8 @@ describe("Rent", function () {
     const Token = await ethers.getContractFactory("MyToken20");
     const token = await Token.connect(renter).deploy();
     await token.deployed();
+
+    await nft.connect(lender).setApprovalForAll(rent.address, true);
 
     return { rent, nft, token, owner, lender, renter, other };
   }
@@ -872,22 +884,6 @@ describe("Rent", function () {
       console.log("Rent contract upgraded successfully");
     });
 
-    it("Can store List info", async function () {
-      const { rent, nft, lender, owner } = await loadFixture(deployRentFixture);
-
-      await nft.connect(lender).safeMint();
-
-      const RentV2 = await ethers.getContractFactory("RentERC721V2");
-      const rent2 = await upgrades.upgradeProxy(rent.address, RentV2);
-      await chai
-        .expect(
-          await rent2
-            .connect(lender)
-            .NFTlist(nft.address, 0, owner.address, 10, 10, 10)
-        )
-        .to.equal(true);
-    });
-
     it("Can Rent with V1 List", async function () {
       const { rent, nft, lender, token, renter } = await loadFixture(
         deployRentFixture
@@ -997,7 +993,7 @@ describe("Rent", function () {
       await nft.connect(lender).safeMint();
       await rent
         .connect(lender)
-        .NFTlist(nft.address, 0, token.address, 1000, 5000, 10);
+        .NFTlist(nft.address, 0, token.address, 1000, 5000, 10, 10);
       await nft.setApprovalForAll(rent.address, true);
       // Token mint & approve
       await token.connect(renter).mint(renter.address, 10000);

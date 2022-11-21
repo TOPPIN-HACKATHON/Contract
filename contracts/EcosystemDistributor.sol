@@ -7,7 +7,7 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-contract Ecosystem is Initializable, UUPSUpgradeable, OwnableUpgradeable {
+contract EcosystemDistributor is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 
     struct epochInfo {
         uint256 lastUpdateTime;
@@ -22,21 +22,22 @@ contract Ecosystem is Initializable, UUPSUpgradeable, OwnableUpgradeable {
     }    
 
     //기존 컨트랙트
-    address rentContract;
-    address feeCollector;
+    address public rentContract;
+    address public feeCollector;
     
     //수수료 보상 토큰들
     address[] public rewardTokens;
-    uint256 epoch;
+    uint256 public epoch;
 
+    mapping(address => uint256) public userContribution;
+    mapping(address => uint256) public lastClaimEpoch;
+    mapping(uint256 => epochInfo) public Info;
+    bool public isShutdown;
+    uint256 public rewardsDuration;
 
-    mapping(address => uint256) userContribution;
-    mapping(address => uint256) lastClaimEpoch;
-    mapping(uint256 => epochInfo) Info;
-    bool isShutdown = false;
-    uint256 rewardsDuration = 86400 * 7;
-
-        function initialize() public initializer {
+    function initialize() public initializer {
+        isShutdown = false;
+        rewardsDuration = 86400 * 7;
        __Ownable_init();
     }
 
@@ -44,10 +45,9 @@ contract Ecosystem is Initializable, UUPSUpgradeable, OwnableUpgradeable {
         rentContract = _rent;
     }
 
-    function feeCollector(address _fee) public onlyOwner {
+    function setFeeCollector(address _fee) public onlyOwner {
         feeCollector = _fee;
     }
-
 
     function _authorizeUpgrade(address) internal override onlyOwner {}
 
@@ -102,7 +102,7 @@ contract Ecosystem is Initializable, UUPSUpgradeable, OwnableUpgradeable {
     }
 
     //기여도 측정(rent, kick이 일어날 때 얘 호출)
-    function addContribution(address _user, uint40 amount) public {
+    function addContribution(address _user, uint256 amount) public {
         require(msg.sender == rentContract, "access denied");
         userContribution[_user] += amount;
     }

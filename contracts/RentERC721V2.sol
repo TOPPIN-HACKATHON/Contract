@@ -1,9 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.10;
 
-import "./RentERC721.sol";
+import "./Rentropy721.sol";
 
-contract RentERC721V2 is RentERC721 {
+contract RentERC721V2 is Rentropy721 {
 
-
+    function rentVersion() pure public returns(uint256) {
+        return 2;
+    }
 }

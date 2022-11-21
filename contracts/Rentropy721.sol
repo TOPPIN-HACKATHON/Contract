@@ -8,6 +8,10 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
+interface Ecosystem {
+    function addContribution(address, uint256) external;
+}
+
 contract Rentropy721 is Initializable, UUPSUpgradeable, OwnableUpgradeable {
     struct Rentinfo {
         address lender_address;
@@ -21,6 +25,11 @@ contract Rentropy721 is Initializable, UUPSUpgradeable, OwnableUpgradeable {
         uint256 rent_duration;
         uint256 rent_block;
     }
+
+    Ecosystem ecosystem;
+    uint256 ecoList;
+    uint256 ecoRent;
+    uint256 ecoKick;
 
     address public operator;
     address public fee_collector;
@@ -101,6 +110,16 @@ contract Rentropy721 is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 
     function setFeecollector (address _fee_collector) external onlyOwner {
         fee_collector = _fee_collector;
+    }
+
+    function setEcosystem (Ecosystem _eco) external onlyOwner {
+        ecosystem = _eco;
+    }
+
+    function setEcoRward(uint256 _ecoList, uint256 _ecoRent, uint256 _ecoKick) external onlyOwner {
+        ecoList = _ecoList;
+        ecoRent = _ecoRent;
+        ecoKick = _ecoKick;
     }
 
     function setPlatformfee (uint256 _platform_fee) external onlyOwner {
@@ -193,6 +212,8 @@ contract Rentropy721 is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 
         IERC20(info.collateral_token).transferFrom(msg.sender, address(this), total);
         IERC721(collection_address).transferFrom(info.lender_address, msg.sender, token_id);
+        ecosystem.addContribution(msg.sender, ecoRent);
+        ecosystem.addContribution(info.lender_address, ecoList);
 
         emit NFTrented(msg.sender, collection_address, token_id, block.number, _rent_duration, info.collateral_amount, rent_fee);
     }
@@ -252,6 +273,8 @@ contract Rentropy721 is Initializable, UUPSUpgradeable, OwnableUpgradeable {
         IERC20(info.collateral_token).transfer(msg.sender, kickfee);
         IERC20(info.collateral_token).transfer(info.lender_address, total);
         IERC20(info.collateral_token).transfer(fee_collector, platformfee);
+
+        ecosystem.addContribution(msg.sender, ecoKick);
 
         emit NFTkicked(msg.sender, collection_address, token_id, info.collateral_amount, fee_amount);
     }
