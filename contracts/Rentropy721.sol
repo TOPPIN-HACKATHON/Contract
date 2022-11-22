@@ -26,10 +26,10 @@ contract Rentropy721 is Initializable, UUPSUpgradeable, OwnableUpgradeable {
         uint256 rent_block;
     }
 
-    Ecosystem ecosystem;
-    uint256 ecoList;
-    uint256 ecoRent;
-    uint256 ecoKick;
+    Ecosystem public ecosystem;
+    uint256 public ecoList;
+    uint256 public ecoRent;
+    uint256 public ecoKick;
 
     address public operator;
     address public fee_collector;
