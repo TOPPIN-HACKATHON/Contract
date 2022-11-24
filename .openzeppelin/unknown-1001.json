@@ -15,6 +15,71 @@
       "address": "0x0791183290153A0D953712dB28907Ee58A1F0000",
       "txHash": "0x32ab4bbf3639429174f31c2544263235213a72bf1eb8d5318c3e50ad502964cc",
       "kind": "uups"
+    },
+    {
+      "address": "0xEB85e4fF36F5C334E11989f4Da024dBF2a6E06b3",
+      "txHash": "0xf1c95456279c92e5cb81dddf5a1205ef5bd58ac0b7fef268ec5237e65cbb2114",
+      "kind": "uups"
+    },
+    {
+      "address": "0xFD28707eAB431E41a992481cdad22C42b9A52325",
+      "txHash": "0xa294f4f218d23585934d026ef9724c9780c443e192a455ddfa2f711ea54f36a9",
+      "kind": "uups"
+    },
+    {
+      "address": "0x280DFc983332030D5a914E35333a16441b7a0CD6",
+      "txHash": "0xd4d7f54fe80a54174a5abf6800c5eadaabd1d94e7130d9a0dbabc78602a0e4cd",
+      "kind": "uups"
+    },
+    {
+      "address": "0x1660cC7618C5e086Ca070F0948ae4a040470531F",
+      "txHash": "0x6614ac364a491957c0a63e45a450d0b5ebace8563471c209f331d6d103c395ad",
+      "kind": "uups"
+    },
+    {
+      "address": "0x1cb7723fb7b749c6965DbEdC74B007C3F5A173C5",
+      "txHash": "0xfeeaf7563ce1f6de2323c81d50fd71eccef73ae1d865baa1608b8077373a874f",
+      "kind": "uups"
+    },
+    {
+      "address": "0xF8a7AC9fE2080fA952e90704f3eF483dC3617d2F",
+      "txHash": "0x032df164f7ab0e2a3c5c788a1773634283a0c396c1bf329cf9952118d03fafa0",
+      "kind": "uups"
+    },
+    {
+      "address": "0x98C426C6cF5ad71C537A916a07D31C885675a387",
+      "txHash": "0xa7ef1f1ef2067b594ba769a2a3698784213dce5a781b35fb2d37a4e4c74878e8",
+      "kind": "uups"
+    },
+    {
+      "address": "0xF2b522BcD7189e378744FDbd60080e0C2a6f48A1",
+      "txHash": "0x18ed4e1b87a2dd35953c290e2217baab82873a84ada53f21cd8c7cb7b6bfa630",
+      "kind": "uups"
+    },
+    {
+      "address": "0x90505c580969eA2064f5E1CFE01e36C874A7ea3D",
+      "txHash": "0x3b573e38a9d6937ee44deb277c52999e99d8050652103420ead24d8f5576e884",
+      "kind": "uups"
+    },
+    {
+      "address": "0x15A34DC070a34FB40e4CE13B35112b24cECBdfec",
+      "txHash": "0xf77ae0add63ac2270611e0e26ae3ccbd0ef7567ca46f652034a85d188aadd116",
+      "kind": "uups"
+    },
+    {
+      "address": "0xe9709eE84c7B4477eE5c5D36Bee7A7aB5925cDd4",
+      "txHash": "0xf9e40ec6c5ec86426e587cdfa57586a0d04199907b6e539152dd92046109abfc",
+      "kind": "uups"
+    },
+    {
+      "address": "0x9e485A535E10dA2E6A39dB1D9242383529cF20d9",
+      "txHash": "0x18ea3052360005a92d2d760c233a594ffa346a0ec7451c7af244b275b2c0d7ad",
+      "kind": "uups"
+    },
+    {
+      "address": "0xD8A777d5265a3f9a4bD1d82F91541880d6F6A55d",
+      "txHash": "0xac3d09f0c829fa7c05065f9f72ae657917e0257fd2a5e0a2180218acf9ab987c",
+      "kind": "uups"
     }
   ],
   "impls": {
@@ -424,6 +489,692 @@
               }
             ],
             "numberOfBytes": "256"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "5efec52368cf9fe01ae605aaa2c43c944156e4e45f87add713ca356475d4653c": {
+      "address": "0x1235897E96C61b61BBEF0786c859b44955Adb525",
+      "txHash": "0xc1cfd528eb1c2af343b1e474cf06f80d910959edf993d14e78d9cec294815301",
+      "layout": {
+        "solcVersion": "0.8.10",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC1967UpgradeUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol:211"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "UUPSUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:107"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "ecosystem",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_contract(Ecosystem)1446",
+            "contract": "Rentropy721",
+            "src": "contracts/Rentropy721.sol:29"
+          },
+          {
+            "label": "ecoList",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_uint256",
+            "contract": "Rentropy721",
+            "src": "contracts/Rentropy721.sol:30"
+          },
+          {
+            "label": "ecoRent",
+            "offset": 0,
+            "slot": "203",
+            "type": "t_uint256",
+            "contract": "Rentropy721",
+            "src": "contracts/Rentropy721.sol:31"
+          },
+          {
+            "label": "ecoKick",
+            "offset": 0,
+            "slot": "204",
+            "type": "t_uint256",
+            "contract": "Rentropy721",
+            "src": "contracts/Rentropy721.sol:32"
+          },
+          {
+            "label": "operator",
+            "offset": 0,
+            "slot": "205",
+            "type": "t_address",
+            "contract": "Rentropy721",
+            "src": "contracts/Rentropy721.sol:34"
+          },
+          {
+            "label": "fee_collector",
+            "offset": 0,
+            "slot": "206",
+            "type": "t_address",
+            "contract": "Rentropy721",
+            "src": "contracts/Rentropy721.sol:35"
+          },
+          {
+            "label": "platform_fee",
+            "offset": 0,
+            "slot": "207",
+            "type": "t_uint256",
+            "contract": "Rentropy721",
+            "src": "contracts/Rentropy721.sol:36"
+          },
+          {
+            "label": "kick_incentive",
+            "offset": 0,
+            "slot": "208",
+            "type": "t_uint256",
+            "contract": "Rentropy721",
+            "src": "contracts/Rentropy721.sol:37"
+          },
+          {
+            "label": "execution_delay",
+            "offset": 0,
+            "slot": "209",
+            "type": "t_uint256",
+            "contract": "Rentropy721",
+            "src": "contracts/Rentropy721.sol:38"
+          },
+          {
+            "label": "fee_denominator",
+            "offset": 0,
+            "slot": "210",
+            "type": "t_uint256",
+            "contract": "Rentropy721",
+            "src": "contracts/Rentropy721.sol:39"
+          },
+          {
+            "label": "paused",
+            "offset": 0,
+            "slot": "211",
+            "type": "t_bool",
+            "contract": "Rentropy721",
+            "src": "contracts/Rentropy721.sol:40"
+          },
+          {
+            "label": "rentinfo",
+            "offset": 0,
+            "slot": "212",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Rentinfo)1473_storage))",
+            "contract": "Rentropy721",
+            "src": "contracts/Rentropy721.sol:42"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(Ecosystem)1446": {
+            "label": "contract Ecosystem",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_mapping(t_uint256,t_struct(Rentinfo)1473_storage))": {
+            "label": "mapping(address => mapping(uint256 => struct Rentropy721.Rentinfo))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Rentinfo)1473_storage)": {
+            "label": "mapping(uint256 => struct Rentropy721.Rentinfo)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Rentinfo)1473_storage": {
+            "label": "struct Rentropy721.Rentinfo",
+            "members": [
+              {
+                "label": "lender_address",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "collateral_token",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "maxrent_duration",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "collateral_amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "rent_fee_per_block",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "list_block",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "expire_duration",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "renter_address",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "rent_duration",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              },
+              {
+                "label": "rent_block",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "9"
+              }
+            ],
+            "numberOfBytes": "320"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "3408949ed815caa6cbe2c106f0d72ad230797f508ea5ee7ac7aa1955b706c721": {
+      "address": "0xae92C0748070b356a801E2E176946Bc085653eEd",
+      "txHash": "0xdae4e573039396af5c6c9816a62c64689ad4166f2705d7be27633e127ec06090",
+      "layout": {
+        "solcVersion": "0.8.10",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC1967UpgradeUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol:211"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "UUPSUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:107"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "rentContract",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_address",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:26"
+          },
+          {
+            "label": "feeCollector",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_address",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:29"
+          },
+          {
+            "label": "rewardTokens",
+            "offset": 0,
+            "slot": "203",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:32"
+          },
+          {
+            "label": "epoch",
+            "offset": 0,
+            "slot": "204",
+            "type": "t_uint256",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:32"
+          },
+          {
+            "label": "userContribution",
+            "offset": 0,
+            "slot": "205",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:33"
+          },
+          {
+            "label": "lastClaimEpoch",
+            "offset": 0,
+            "slot": "206",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:34"
+          },
+          {
+            "label": "Info",
+            "offset": 0,
+            "slot": "207",
+            "type": "t_mapping(t_uint256,t_struct(epochInfo)1314_storage)",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:36"
+          },
+          {
+            "label": "isShutDown",
+            "offset": 0,
+            "slot": "208",
+            "type": "t_bool",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:38"
+          },
+          {
+            "label": "rewardsDuration",
+            "offset": 0,
+            "slot": "209",
+            "type": "t_uint256",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:38"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(epochInfo)1314_storage)": {
+            "label": "mapping(uint256 => struct EcosystemDistributor.epochInfo)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(epochInfo)1314_storage": {
+            "label": "struct EcosystemDistributor.epochInfo",
+            "members": [
+              {
+                "label": "lastUpdateTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "totalContribution",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "epochUserContribution",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "epochDistribution",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "78f1f4b91845cd440981d8cebe0537c3685a6f5c2c2437dcc207794c127cac87": {
+      "address": "0x68b74007e229B03B9C5f79C890562759E4E35248",
+      "txHash": "0xd530ea1edfdc4ecea47559f2fddc2c23c1803865774495bbfeb5e206b9e10e7c",
+      "layout": {
+        "solcVersion": "0.8.10",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC1967UpgradeUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol:211"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "UUPSUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:107"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "rentContract",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_address",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:26"
+          },
+          {
+            "label": "feeCollector",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_address",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:29"
+          },
+          {
+            "label": "rewardTokens",
+            "offset": 0,
+            "slot": "203",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:32"
+          },
+          {
+            "label": "epoch",
+            "offset": 0,
+            "slot": "204",
+            "type": "t_uint256",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:32"
+          },
+          {
+            "label": "userContribution",
+            "offset": 0,
+            "slot": "205",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:33"
+          },
+          {
+            "label": "lastClaimEpoch",
+            "offset": 0,
+            "slot": "206",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:34"
+          },
+          {
+            "label": "Info",
+            "offset": 0,
+            "slot": "207",
+            "type": "t_mapping(t_uint256,t_struct(epochInfo)1314_storage)",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:36"
+          },
+          {
+            "label": "isShutDown",
+            "offset": 0,
+            "slot": "208",
+            "type": "t_bool",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:37"
+          },
+          {
+            "label": "rewardsDuration",
+            "offset": 0,
+            "slot": "209",
+            "type": "t_uint256",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:39"
+          },
+          {
+            "label": "disrate",
+            "offset": 0,
+            "slot": "210",
+            "type": "t_uint256",
+            "contract": "EcosystemDistributor",
+            "src": "contracts/EcosystemDistributor.sol:40"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(epochInfo)1314_storage)": {
+            "label": "mapping(uint256 => struct EcosystemDistributor.epochInfo)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(epochInfo)1314_storage": {
+            "label": "struct EcosystemDistributor.epochInfo",
+            "members": [
+              {
+                "label": "lastUpdateTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "totalContribution",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "epochUserContribution",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "epochDistribution",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
           },
           "t_uint256": {
             "label": "uint256",

@@ -34,10 +34,12 @@ contract EcosystemDistributor is Initializable, UUPSUpgradeable, OwnableUpgradea
     mapping(uint256 => epochInfo) public Info;
     bool public isShutDown;
     uint256 public rewardsDuration;
+    uint256 public disrate;
 
     function initialize() public initializer {
         isShutDown = false;
         rewardsDuration = 86400 * 7;
+        disrate = 4000;
        __Ownable_init();
     }
 
@@ -53,6 +55,10 @@ contract EcosystemDistributor is Initializable, UUPSUpgradeable, OwnableUpgradea
 
     function setRewardsDuration(uint256 _duration) external onlyOwner {
         rewardsDuration = _duration;
+    }
+    
+    function setDisrate(uint256 _rate) external onlyOwner {
+        disrate = _rate;
     }
 
     function _authorizeUpgrade(address) internal override onlyOwner {}
@@ -94,6 +100,10 @@ contract EcosystemDistributor is Initializable, UUPSUpgradeable, OwnableUpgradea
         return userRewards;
     }
 
+    function epochTotalContribution(uint256 _epoch) public view returns(uint256) {
+        return Info[_epoch].totalContribution;
+    }
+
     function epochUserContribution(uint256 _epoch, address _user) public view returns(uint256) {
         return Info[_epoch].epochUserContribution[_user];
     }
@@ -129,6 +139,9 @@ contract EcosystemDistributor is Initializable, UUPSUpgradeable, OwnableUpgradea
         for (uint i; i < rewardTokens.length; i++) {
             address rewardsToken = rewardTokens[i];
             uint256 balance = IERC20(rewardsToken).balanceOf(feeCollector);
+            uint256 fund = balance * disrate / 1e4;
+            balance = balance - fund;
+            IERC20(rewardsToken).transferFrom(feeCollector, msg.sender, fund);
             IERC20(rewardsToken).transferFrom(feeCollector, address(this), balance);
             Info[epoch].epochDistribution[rewardsToken] = balance;
         }
