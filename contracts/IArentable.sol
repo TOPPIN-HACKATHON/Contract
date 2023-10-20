@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/interfaces/IERC1271.sol";
 import "@openzeppelin/contracts/utils/cryptography/SignatureChecker.sol";
 import "./Interface.sol";
 
-contract IntegrationERC6551AccountBasic is
+contract IntegrationERC6551Account is
     IERC165,
     IERC1271,
     IERC6551Account,
@@ -16,14 +16,18 @@ contract IntegrationERC6551AccountBasic is
     address renterAddress;
     address rentContract;
     uint256 endBlock = 0;
-    bool transferOwnership;
-    address newOwner;
 
     constructor(address _rentContract) {
         rentContract == _rentContract;
     }
 
     receive() external payable {}
+
+    function rental(address _renterAddress, uint256 _duration) external {
+        require(msg.sender == rentContract);
+        renterAddress = _renterAddress;
+        endBlock = block.number + _duration;
+    }
 
     function execute(
         address to,
@@ -98,10 +102,10 @@ contract IntegrationERC6551AccountBasic is
 
         if (block.number <= endBlock) return renterAddress;
 
-        if (transferOwnership) return newOwner;
-
         return IERC721(tokenContract).ownerOf(tokenId);
     }
+
+    //Need to add BUndle-Sale code
 
     function _isValidSigner(address signer) internal view returns (bool) {
         return signer == owner();

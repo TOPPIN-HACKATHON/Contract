@@ -4,6 +4,7 @@ const chai = require("chai");
 const { solidity } = require("ethereum-waffle");
 chai.use(solidity);
 
+//Will be truncated
 describe("Rent", function () {
   async function deployRentFixture() {
     const [owner, lender, renter, other] = await ethers.getSigners();
